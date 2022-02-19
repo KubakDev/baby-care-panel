@@ -1,0 +1,22 @@
+div {
+  position: relative;
+  overflow: hidden;
+}
+#eclipse {
+  position: absolute;
+}
+
+::ng-deep {
+  #eclipse {
+    animation: eclipse 4s infinite alternate;
+  }
+
+  @keyframes eclipse {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(60px);
+    }
+  }
+}

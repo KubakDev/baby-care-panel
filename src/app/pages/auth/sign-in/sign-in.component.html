@@ -1,0 +1,75 @@
+<div class="flex flex-col gap-8 justify-center items-center h-full p-12">
+  <div *ngIf="isError" class="alert alert-error w-full">
+    <div class="flex-1">
+      <label class="text-sm">Incorrect username or password</label>
+    </div>
+  </div>
+  <form
+    class="w-full flex flex-col gap-5"
+    *ngIf="signInForm"
+    [formGroup]="signInForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="flex flex-col gap-3 pb-1 px-1">
+      <label for="username" class="label-text text-primary strong text-lg"
+        >Username</label
+      >
+      <input
+        formControlName="username"
+        class="input input-primary"
+        type="username"
+        placeholder="Username"
+      />
+      <div
+        *ngIf="signInForm.controls['username'].invalid && submitted === true"
+        class="alert alert-error"
+      >
+        <div class="flex-1">
+          <label *ngIf="signInForm.value.username == 0" class="text-sm"
+            >Username is required</label
+          >
+          <label *ngIf="signInForm.value.username.length > 0" class="text-sm"
+            >Username must be at least 3 characters</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 pb-1 px-1">
+      <label for="password" class="label-text text-primary text-lg strong"
+        >Password</label
+      >
+      <input
+        formControlName="password"
+        class="input input-primary"
+        type="password"
+        placeholder="***********"
+        (keyup.enter)="onSubmit()"
+      />
+      <div
+        *ngIf="signInForm.controls['password'].invalid && submitted === true"
+        class="alert alert-error"
+      >
+        <div class="flex-1">
+          <label *ngIf="signInForm.value.password == 0" class="text-sm"
+            >Password is required</label
+          >
+          <label *ngIf="signInForm.value.password.length > 0" class="text-sm"
+            >Password must be at least 6 characters</label
+          >
+        </div>
+      </div>
+    </div>
+    <a routerLink="/forgot-password" class="link text-center"
+      >Forgot Password?</a
+    >
+    <button
+      [disabled]="!signInForm.valid && submitted"
+      type="button"
+      (click)="onSubmit()"
+      [ngClass]="isLoading ? 'loading' : ''"
+      class="btn btn-primary w-full pb-1 px-1"
+    >
+      Log In
+    </button>
+  </form>
+</div>

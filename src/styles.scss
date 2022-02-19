@@ -1,3 +1,21 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@font-face {
+  font-family: "Rabar";
+  src: local("Rabar"), url(./assets/fonts/Rabar_022.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Rabar_strong";
+  src: local("Rabar_strong"),
+    url(./assets/fonts/Rabar_021.ttf) format("truetype");
+}
+
+html {
+  font-family: "Rabar", Arial, Helvetica, sans-serif;
+}
+
+.strong {
+  font-family: "Rabar_strong", Arial, Helvetica, sans-serif;
+}
