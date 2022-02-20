@@ -1,6 +1,14 @@
-<div class="navbar w-full bg-neutral text-neutral-content shadow-xl rounded-xl">
+<div
+  class="navbar w-full bg-neutral text-neutral-content shadow-xl rounded-xl px-4"
+>
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <div class="text-sm breadcrumbs">
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>Documents</a></li>
+        <li>Add Document</li>
+      </ul>
+    </div>
   </div>
   <div class="flex-none">
     <div class="dropdown dropdown-end">
@@ -12,15 +20,56 @@
       </label>
       <div
         tabindex="0"
-        class="mt-3 card card-compact w-52 dropdown-content bg-base-100 shadow"
+        class="mt-3 card card-compact w-[330px] dropdown-content bg-base-100 shadow text-neutral"
       >
-        <div class="card-body">
-          <span class="font-bold text-lg">8 Items</span>
-          <span class="text-info-content">Subtotal: $999</span>
-          <div class="card-actions">
-            <button class="btn btn-primary btn-block">View cart</button>
-          </div>
-        </div>
+        <ul
+          class="menu bg-base-100 menu-compact lg:menu-normal w-full p-2 rounded-box"
+        >
+          <li>
+            <a>
+              <div class="flex">
+                <span class="material-icons text-xs text-primary py-1">
+                  circle
+                </span>
+                <div class="px-2">
+                  Notifications1
+
+                  <p class="text-base-300">July 22, 2020 12:08PM</p>
+                </div>
+              </div></a
+            >
+          </li>
+          <li>
+            <a>
+              <div class="flex">
+                <span class="material-icons text-xs text-primary py-1">
+                  circle
+                </span>
+                <div class="px-2">
+                  Notifications2
+
+                  <p class="text-base-300">July 22, 2020 12:08PM</p>
+                </div>
+              </div></a
+            >
+          </li>
+          <li>
+            <a>
+              <div class="flex">
+                <span class="material-icons text-xs text-base-300 py-1">
+                  circle
+                </span>
+                <div class="px-2">
+                  Notifications3
+
+                  <p class="text-base-300">July 22, 2020 12:08PM</p>
+                </div>
+              </div></a
+            >
+          </li>
+          <div class="divider"></div>
+          <a class="link text-primary px-5 pb-3">View all notifications</a>
+        </ul>
       </div>
     </div>
     <div class="dropdown dropdown-end">
@@ -29,19 +78,24 @@
           <img src="https://api.lorem.space/image/face?hash=33791" />
         </div>
       </label>
-      <ul
+      <div
         tabindex="0"
-        class="mt-3 p-2 shadow menu menu-compact text-neutral dropdown-content bg-base-100 rounded-box w-52"
+        class="mt-3 px-4 py-6 shadow menu menu-compact text-neutral dropdown-content bg-base-100 rounded-box w-[400px] flex flex-col items-center justify-center gap-3"
       >
-        <li>
-          <a class="justify-between">
-            Profile
-            <span class="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <img src="https://api.lorem.space/image/face?hash=92310" />
+          </div>
+        </div>
+        <h2 class="strong text-lg">Sheradin</h2>
+        <div class="text-center">
+          <p>Hola Seniorita</p>
+          <p>Admin Root</p>
+        </div>
+        <button class="btn btn-outline btn-primary w-full">
+          View Full Profile
+        </button>
+      </div>
     </div>
   </div>
 </div>
