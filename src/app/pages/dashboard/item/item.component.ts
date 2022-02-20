@@ -16,14 +16,8 @@ export class ItemComponent implements OnInit {
   constructor(private route: ActivatedRoute, private item: ItemService) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.getItem(+params['userId']);
+    this.route.params.subscribe(() => {
+      this.user = (this.route.snapshot.data as any).user;
     });
-  }
-
-  getItem(id: number) {
-    this.user.name = this.item.items[id].name;
-    this.user.job = this.item.items[id].job;
-    this.user.color = this.item.items[id].color;
   }
 }
