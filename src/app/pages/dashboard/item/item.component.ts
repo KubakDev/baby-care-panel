@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ItemComponent implements OnInit {
     job: '',
     color: '',
   };
-  constructor(private route: ActivatedRoute, private item: ItemService) {}
+  constructor(private route: ActivatedRoute, private item: ItemService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -25,5 +25,8 @@ export class ItemComponent implements OnInit {
     this.user.name = this.item.items[id].name;
     this.user.job = this.item.items[id].job;
     this.user.color = this.item.items[id].color;
+  }
+  cancleUser() {
+    this.router.navigate(['/dashboard/users']);
   }
 }

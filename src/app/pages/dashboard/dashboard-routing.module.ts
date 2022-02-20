@@ -10,7 +10,13 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      { path: '', component: NothingToShowComponent },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./users/users.module').then(
+            (m) => m.UsersModule
+          ),
+      },
       { path: ':userId', component: ItemComponent },
     ],
   },
@@ -20,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule { }

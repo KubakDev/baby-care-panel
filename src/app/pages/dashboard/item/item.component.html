@@ -1,8 +1,58 @@
-<div
-  *ngIf="user"
-  class="rounded-3xl bg-white h-full w-full flex flex-col items-center justify-center gap-5"
->
-  <h1>{{ user.name }}</h1>
-  <h1>{{ user.job }}</h1>
-  <h1>{{ user.color }}</h1>
+<div *ngIf="user" class="rounded-3xl bg-white h-full w-full flex flex-col  gap-5 overflow-y-scroll">
+  <div class="w-full flex justify-center ">
+
+    <div class="w-10/12 flex justify-between mt-14 ">
+
+      <div class="avatar flex justify-start ">
+        <div class="w-28 rounded-full">
+          <img src="https://api.lorem.space/image/face?hash=92310">
+        </div>
+      </div>
+      <button class="material-icons text-[40px]" (click)="cancleUser()">
+        close
+      </button>
+
+
+    </div>
+  </div>
+  <form class="w-full flex flex-col items-center  mt-5 ">
+    <label class="w-9/12 font-bold mb-3 text-xl ">Name</label>
+    <input type="text" placeholder={{user.name}} class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl">Username</label>
+    <input type="text" placeholder={{user.name}} class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl ">Birthday</label>
+    <input type="text" placeholder="12/sep/2000" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl">Phone Number</label>
+    <input type="text" placeholder="+9647708880099" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl ">State</label>
+    <input type="text" placeholder="Pregnant" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl">Location</label>
+    <input type="text" placeholder="Sulaimanyah" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl ">Disease(s)</label>
+    <input type="text" placeholder="None" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl">Verified</label>
+    <input type="text" placeholder="No" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 font-bold mb-3 text-xl ">Baby Info</label>
+    <label class="w-9/12  mb-3 text-xl text-slate-400">Due Date:</label>
+    <input type="text" placeholder="16/sep/2022" class="input input-bordered w-9/12 mb-3 ">
+
+    <label class="w-9/12  mb-3 text-xl text-slate-400">Gender</label>
+    <input type="text" placeholder="Male" class="input input-bordered w-9/12 mb-3">
+
+    <label class="w-9/12 mb-3 text-xl text-slate-400">Disease(s)</label>
+    <input type="text" placeholder="None" class="input input-bordered w-9/12 mb-3">
+
+    <div class="flex justify-center mt-3 mb-6">
+      <button class="btn mr-3">Cancle</button>
+      <button class="btn btn-outline btn-primary">Save Changes</button>
+    </div>
+  </form>
 </div>

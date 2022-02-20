@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-nothing-to-show',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nothing-to-show.component.scss']
 })
 export class NothingToShowComponent implements OnInit {
-
-  constructor() { }
+  page: string | undefined
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.page = this.itemService.url;
   }
 
 }
