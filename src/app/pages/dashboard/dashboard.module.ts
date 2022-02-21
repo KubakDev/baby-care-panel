@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/components/shared.module';
 import { ItemComponent } from './item/item.component';
 import { NothingToShowComponent } from './nothing-to-show/nothing-to-show.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
-  declarations: [DashboardComponent, ItemComponent, NothingToShowComponent],
+  declarations: [DashboardComponent, ItemComponent, NothingToShowComponent, SettingsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

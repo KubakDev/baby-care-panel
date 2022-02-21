@@ -1,6 +1,10 @@
 <ul class="menu bg-base-100 w-64 p-2 rounded-box">
   <li routerLink="/dashboard">
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content" [routerLinkActiveOptions]="{exact:true}">
+    <a
+      class="strong"
+      routerLinkActive=" bg-primary text-primary-content"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <span class="material-icons"> home </span>
       Home
     </a>
@@ -35,8 +39,8 @@
       Survey
     </a>
   </li>
-  <li>
-    <a class="strong">
+  <li routerLink="/dashboard/settings">
+    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> settings </span>
       Settings
     </a>
