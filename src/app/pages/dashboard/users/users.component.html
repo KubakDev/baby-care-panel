@@ -1,4 +1,4 @@
-<div class="flex h-[900px] w-full">
+<div class="flex w-full h-auto">
 
 
   <div class="h-full w-full flex items-center flex-col justify-start">
@@ -74,7 +74,7 @@
 
 
       </table>
-      <div class="h-auto w-full flex justify-center items-end pb-10 bg-white" *ngIf="!isLoading">
+      <div class="h-auto w-full flex justify-center items-end pb-10 bg-white mt-20" *ngIf="!isLoading">
         <div class="btn-group">
           <button class="btn">1</button>
           <button class="btn btn-active">2</button>
@@ -87,8 +87,9 @@
     </div>
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
   </div>
-  <div class="w-[800px] px-12 pb-8 flex justify-center items-center">
-    <div class="w-full h-full">
+
+  <div class="card w-[800px] px-12 pb-8 flex justify-center items-start  ">
+    <div class=" w-full h-full">
       <router-outlet></router-outlet>
     </div>
   </div>
