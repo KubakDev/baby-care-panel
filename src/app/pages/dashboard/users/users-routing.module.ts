@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemComponent } from '../item/item.component';
 import { NothingToShowComponent } from '../nothing-to-show/nothing-to-show.component';
 import { UsersComponent } from './users.component';
 import { UserResolverService } from 'src/app/services/user-resolver.service';
+import { UserformComponent } from './userform/userform.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: '', component: NothingToShowComponent, pathMatch: "full" },
       {
         path: ':userId',
-        component: ItemComponent,
+        component: UserformComponent,
         data: { breadcrumb: (data: any) => `${data.user.name}` },
         resolve: { user: UserResolverService },
       },

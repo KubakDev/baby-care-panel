@@ -5,11 +5,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ErrorComponent } from './error/error.component';
 const components = [
   LoadingSpinnerComponent,
   SidebarComponent,
   TopbarComponent,
   BreadcrumbComponent,
+  ErrorComponent
 ];
 
 @NgModule({
@@ -18,4 +20,4 @@ const components = [
   exports: [...components],
   providers: [],
 })
-export class SharedModule {}
+export class SharedModule { }

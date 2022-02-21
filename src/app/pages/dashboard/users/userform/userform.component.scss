@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  padding-right: 30px;
+  background:#3701ac;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  padding-right: 30px;
+  background:#5c2ec0;
+  border-radius: 5px;
+}
+.test{
+  
+  height: 88%;
+  width: 520px;
+}
