@@ -13,17 +13,16 @@ const routes: Routes = [
     data: { breadcrumb: 'Dashboard' },
 
     children: [
+
       {
-        path: '',
-        component: NothingToShowComponent,
-        data: { breadcrumb: '' },
+        path: 'users',
+        loadChildren: () =>
+          import('./users/users.module').then(
+            (m) => m.UsersModule
+          ),
       },
-      {
-        path: ':userId',
-        component: ItemComponent,
-        data: { breadcrumb: (data: any) => `${data.user.name}` },
-        resolve: { user: UserResolverService },
-      },
+
+
     ],
   },
 ];
@@ -32,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule { }

@@ -14,10 +14,11 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
