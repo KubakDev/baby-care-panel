@@ -5,25 +5,25 @@ import { NothingToShowComponent } from '../nothing-to-show/nothing-to-show.compo
 import { UsersComponent } from './users.component';
 import { UserResolverService } from 'src/app/services/user-resolver.service';
 
-
 const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
+    data: { breadcrumb: 'Users' },
     children: [
-      { path: '', component: NothingToShowComponent, pathMatch: "full" },
+      {
+        path: '',
+        component: NothingToShowComponent,
+        pathMatch: 'full',
+        data: { breadcrumb: '' },
+      },
       {
         path: ':userId',
         component: ItemComponent,
         data: { breadcrumb: (data: any) => `${data.user.name}` },
         resolve: { user: UserResolverService },
       },
-
-
-
-    ]
-
-
+    ],
   },
 ];
 
@@ -31,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class UsersRoutingModule { }
+export class UsersRoutingModule {}
