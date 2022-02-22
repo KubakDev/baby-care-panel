@@ -9,22 +9,10 @@
       Home
     </a>
   </li>
-  <li routerLink="/dashboard/users">
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
-      <span class="material-icons"> people </span>
-      Users
-    </a>
-  </li>
-  <li>
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
-      <span class="material-icons"> image </span>
-      Ads
-    </a>
-  </li>
   <li>
     <a class="strong">
-      <span class="material-icons"> escalator_warning </span>
-      Children
+      <span class="material-icons"> notifications </span>
+      Inbox
     </a>
   </li>
   <li>
@@ -39,15 +27,34 @@
       Survey
     </a>
   </li>
+  <li>
+    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+      <span class="material-icons"> image </span>
+      Ads
+    </a>
+  </li>
+  <div class="divider"></div>
+  <li routerLink="/dashboard/users">
+    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+      <span class="material-icons"> people </span>
+      Users
+    </a>
+  </li>
+  <li>
+    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+      <span class="material-icons"> groups </span>
+      Admins
+    </a>
+  </li>
+  <div class="divider"></div>
   <li routerLink="/dashboard/settings">
     <a class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> settings </span>
       Settings
     </a>
   </li>
-  <div class="divider"></div>
   <li (click)="onLogout()" class="text-error-content">
-    <a class="strong">
+    <a class="strong bg-error">
       <span class="material-icons"> logout </span>
       Log Out
     </a>
