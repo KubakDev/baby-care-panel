@@ -9,9 +9,12 @@
             (keyup)="onType($event)" />
 
           <div class="h-full flex items-center ">
-            <span class="material-icons text-3xl text-base-300">
+            <span class="material-icons text-3xl text-base-300" *ngIf="!searchText">
               search
             </span>
+            <button class="material-icons text-4xl text-base-300" *ngIf=" searchText" (click)="onClear()">
+              clear
+            </button>
           </div>
         </div>
       </div>
