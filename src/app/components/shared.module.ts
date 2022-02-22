@@ -6,12 +6,14 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ErrorComponent } from './error/error.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 const components = [
   LoadingSpinnerComponent,
   SidebarComponent,
   TopbarComponent,
   BreadcrumbComponent,
-  ErrorComponent
+  ErrorComponent,
+  ConfirmModalComponent
 ];
 
 @NgModule({
