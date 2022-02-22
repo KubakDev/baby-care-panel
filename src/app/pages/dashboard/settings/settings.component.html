@@ -1,20 +1,21 @@
-<div class="w-full h-full pr-12">
-  <div class="bg-white p-12 rounded-3xl">
-    <div class="tabs pb-6">
-      <a
-        routerLink="/dashboard/settings"
-        routerLinkActive="tab-active"
-        class="tab tab-bordered"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >User Details</a
-      >
-      <a
-        routerLink="app-management"
-        routerLinkActive="tab-active"
-        class="tab tab-bordered"
-        >App Management</a
-      >
-    </div>
+<div class="w-full h-full">
+  <div class="tabs tab-border-none">
+    <a
+      routerLink="/dashboard/settings"
+      routerLinkActive="tab-active"
+      class="tab tab-lg tab-lifted tab-border-none"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >User Details</a
+    >
+    <a
+      routerLink="app-management"
+      routerLinkActive="tab-active"
+      class="tab tab-lg tab-lifted"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >App Management</a
+    >
+  </div>
+  <div class="bg-white p-12 settings-container">
     <router-outlet></router-outlet>
   </div>
 </div>
