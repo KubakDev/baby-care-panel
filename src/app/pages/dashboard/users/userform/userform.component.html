@@ -13,68 +13,114 @@
           <img src="https://api.lorem.space/image/face?hash=92310">
         </div>
       </div>
-      <button class="material-icons text-[40px]" (click)="cancleUser()">
-        close
-      </button>
+      <div>
+        <button class="material-icons text-[40px]" (click)="cancleUser()">
+          close
+        </button>
+        <button class="material-icons text-[40px] ml-5" (click)="changeEditMode(true)">
+          mode_edit
+        </button>
+
+      </div>
 
     </div>
   </div>
-  <form class="w-full flex flex-col items-center  mt-5 " (ngSubmit)="onSubmitEdit()" [formGroup]="usersForm">
-    <label class="w-9/12 font-bold mb-3 text-xl ">Name</label>
-    <input type="text" placeholder={{user.name}} class="input input-bordered w-9/12 mb-3" formControlName="name" />
-    <div class="w-9/12 mb-3" *ngIf="usersForm.get('name')?.invalid && submited">
-      <app-error warn="name should between 3-64 character"></app-error>
-
-    </div>
+  <div class="w-full flex justify-center">
 
 
-    <label class=" w-9/12 font-bold mb-3 text-xl">Username</label>
-    <input type="text" placeholder={{user.name}} class="input input-bordered w-9/12 mb-3" formControlName="userName">
-    <div class="w-9/12 mb-3" *ngIf="usersForm.get('userName')?.invalid && submited">
-      <app-error warn="Username should between 3-20 character"></app-error>
+    <form class="w-9/12 flex flex-col items-center  mt-5 " (ngSubmit)="onSubmitEdit()" [formGroup]="usersForm">
+      <label class="w-full font-bold mb-3 text-xl ">Name</label>
+      <input type="text" placeholder={{user.name}} class="input input-bordered w-full mb-3" formControlName="name"
+        *ngIf="editMode" />
 
-    </div>
-    <label class=" w-9/12 font-bold mb-3 text-xl">password</label>
-    <input type="text" placeholder="password" class="input input-bordered w-9/12 mb-3" formControlName="password">
-    <div class="w-9/12 mb-3" *ngIf="usersForm.get('password')?.invalid && submited">
-      <app-error warn="password should between 3-64 character"></app-error>
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
 
-    </div>
-    <label class="w-9/12 font-bold mb-3 text-xl ">Birthday</label>
-    <input type="text" placeholder="12/sep/2000" class="input input-bordered w-9/12 mb-3" formControlName="birthDay">
+      <div class="w-full mb-3" *ngIf="usersForm.get('name')?.invalid && submited">
+        <app-error warn="name should between 3-64 character"></app-error>
+
+      </div>
 
 
-    <label class="w-9/12 font-bold mb-3 text-xl">Phone Number</label>
-    <input type="text" placeholder="+9647708880099" class="input input-bordered w-9/12 mb-3"
-      formControlName="phoneNumber">
+      <label class=" w-full font-bold mb-3 text-xl">Username</label>
+      <input type="text" placeholder={{user.name}} class="input input-bordered w-full mb-3" formControlName="userName"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
 
-    <label class="w-9/12 font-bold mb-3 text-xl ">State</label>
-    <input type="text" placeholder="Pregnant" class="input input-bordered w-9/12 mb-3" formControlName="state">
+      <div class="w-full mb-3" *ngIf="usersForm.get('userName')?.invalid && submited">
+        <app-error warn="Username should between 3-20 character"></app-error>
 
-    <label class="w-9/12 font-bold mb-3 text-xl">Location</label>
-    <input type="text" placeholder="Sulaimanyah" class="input input-bordered w-9/12 mb-3" formControlName="location">
+      </div>
+      <label class=" w-full font-bold mb-3 text-xl">password</label>
+      <input type="text" placeholder="password" class="input input-bordered w-full mb-3" formControlName="password"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
 
-    <label class="w-9/12 font-bold mb-3 text-xl ">Disease(s)</label>
-    <input type="text" placeholder="None" class="input input-bordered w-9/12 mb-3" formControlName="diseases">
+      <div class="w-full mb-3" *ngIf="usersForm.get('password')?.invalid && submited">
+        <app-error warn="password should between 3-64 character"></app-error>
 
-    <label class="w-9/12 font-bold mb-3 text-xl">Verified</label>
-    <input type="text" placeholder="No" class="input input-bordered w-9/12 mb-3" formControlName="verified">
-    <div class="flex flex-col w-full  items-center " formGroupName="babyInfo">
+      </div>
+      <label class="w-full font-bold mb-3 text-xl ">Birthday</label>
+      <input type="text" placeholder="12/sep/2000" class="input input-bordered w-full mb-3" formControlName="birthDay"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
 
-      <label class="w-9/12 font-bold mb-3 text-xl ">Baby Info</label>
-      <label class="w-9/12  mb-3 text-xl text-slate-400">Due Date:</label>
-      <input type="text" placeholder="16/sep/2022" class="input input-bordered w-9/12 mb-3 " formControlName="dueDate">
 
-      <label class="w-9/12  mb-3 text-xl text-slate-400">Gender</label>
-      <input type="text" placeholder="Male" class="input input-bordered w-9/12 mb-3" formControlName="gender">
 
-      <label class="w-9/12 mb-3 text-xl text-slate-400">Disease(s)</label>
-      <input type="text" placeholder="None" class="input input-bordered w-9/12 mb-3" formControlName="diseases">
+      <label class="w-full font-bold mb-3 text-xl">Phone Number</label>
+      <input type="text" placeholder="+9647708880099" class="input input-bordered w-full mb-3"
+        formControlName="phoneNumber" *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
 
-    </div>
-    <div class="flex justify-center mt-3 mb-6">
-      <button class="btn mr-3 btn-outline" type="button">Cancel</button>
-      <button class="btn btn-outline btn-primary" type="submit">Save Changes</button>
-    </div>
-  </form>
+
+      <label class="w-full font-bold mb-3 text-xl ">State</label>
+      <input type="text" placeholder="Pregnant" class="input input-bordered w-full mb-3" formControlName="state"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+      <label class="w-full font-bold mb-3 text-xl">Location</label>
+      <input type="text" placeholder="Sulaimanyah" class="input input-bordered w-full mb-3" formControlName="location"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+      <label class="w-full font-bold mb-3 text-xl ">Disease(s)</label>
+      <input type="text" placeholder="None" class="input input-bordered w-full mb-3" formControlName="diseases"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+      <label class="w-full font-bold mb-3 text-xl">Verified</label>
+      <input type="text" placeholder="No" class="input input-bordered w-full mb-3" formControlName="verified"
+        *ngIf="editMode">
+      <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+      <div class="flex flex-col w-full  items-center " formGroupName="babyInfo">
+
+        <label class="w-full font-bold mb-3 text-xl ">Baby Info</label>
+        <label class="w-full  mb-3 text-xl text-slate-400">Due Date:</label>
+        <input type="text" placeholder="16/sep/2022" class="input input-bordered w-full mb-3 " formControlName="dueDate"
+          *ngIf="editMode">
+        <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+        <label class="w-full  mb-3 text-xl text-slate-400">Gender</label>
+        <input type="text" placeholder="Male" class="input input-bordered w-full mb-3" formControlName="gender"
+          *ngIf="editMode">
+        <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+        <label class="w-full mb-3 text-xl text-slate-400">Disease(s)</label>
+        <input type="text" placeholder="None" class="input input-bordered w-full mb-3" formControlName="diseases"
+          *ngIf="editMode">
+        <h1 *ngIf="!editMode" class="w-full text-lg mb-4">{{user.name}}</h1>
+
+
+      </div>
+      <div class="flex justify-center mt-3 mb-6" *ngIf="editMode">
+        <button class="btn mr-3 btn-outline" type="button" (click)="changeEditMode(false)">Cancel</button>
+        <button class="btn btn-outline btn-primary" type="submit">Save Changes</button>
+      </div>
+    </form>
+  </div>
 </div>

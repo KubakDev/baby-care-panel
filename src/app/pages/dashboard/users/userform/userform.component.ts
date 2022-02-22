@@ -15,6 +15,7 @@ export class UserformComponent implements OnInit {
     job: '',
     color: '',
   };
+  editMode: boolean = false;
   submited: boolean = false;
   confirmModal: boolean = false;
   usersForm = new FormGroup({
@@ -63,6 +64,12 @@ export class UserformComponent implements OnInit {
       this.confirmModal = false;
     }
 
+  }
+  changeEditMode(condition: boolean) {
+    if (condition)
+      this.editMode = true;
+    else
+      this.editMode = false;
   }
 
 
