@@ -18,7 +18,7 @@ export class UserformComponent implements OnInit {
   editMode: boolean = false;
   submited: boolean = false;
   confirmModal: boolean = false;
-  usersForm = new FormGroup({
+  userForm = new FormGroup({
     name: new FormControl('', [Validators.minLength(3), Validators.maxLength(64)]),
     userName: new FormControl('', [Validators.minLength(3), Validators.maxLength(20)]),
     password: new FormControl('', [Validators.minLength(3), Validators.maxLength(64)]),
@@ -51,8 +51,8 @@ export class UserformComponent implements OnInit {
   }
   onSubmitEdit() {
     this.submited = true
-    if (this.usersForm.valid) {
-      console.log(this.usersForm.value)
+    if (this.userForm.valid) {
+      console.log(this.userForm.value)
       this.submited = false
       this.confirmModal = true;
 

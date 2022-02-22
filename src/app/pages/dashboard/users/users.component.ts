@@ -110,6 +110,7 @@ export class UsersComponent implements OnInit {
     this.searchText = undefined;
     this.users = this.copy;
     this.subjKeyUp.next(undefined);
+
   }
 
   //#endregion
