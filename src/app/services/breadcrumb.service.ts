@@ -52,6 +52,7 @@ export class BreadcrumbService {
           label: this.getLabel(route.data),
           url: '/' + routeUrl.join('/'),
         };
+
         breadcrumbs.push(breadcrumb);
       }
 
