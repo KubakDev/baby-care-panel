@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 import { AuthService } from '../../auth/services/auth.service';
@@ -33,7 +34,7 @@ export class UsersComponent implements OnInit {
 
   //#region Constructor
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private toastr: ToastrService) { }
 
   //#endregion
 
