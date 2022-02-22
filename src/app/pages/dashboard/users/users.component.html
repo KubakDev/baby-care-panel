@@ -1,27 +1,28 @@
 <div class="flex w-full h-auto">
-
-
   <div class="h-full w-full flex items-center flex-col justify-start">
-    <div class="w-full flex justify-end gap-4 mb-10 ">
+    <div class="w-full flex justify-end gap-4 mb-10">
       <div class="form-control w-full">
-        <div class="relative flex w-full pr-16 input h-16 rounded-2xl drop-shadow-xl text-lg">
-          <input type="text" id="" placeholder="#1246788" class="w-full border-none" #input [(ngModel)]="searchText"
-            (keyup)="onType($event)" />
+        <div
+          class="relative flex w-full pr-16 input h-16 rounded-2xl drop-shadow-xl text-lg"
+        >
+          <input
+            type="text"
+            id=""
+            placeholder="#1246788"
+            class="w-full border-none"
+            #input
+            [(ngModel)]="searchText"
+            (keyup)="onType($event)"
+          />
 
-          <div class="h-full flex items-center ">
-            <span class="material-icons text-3xl text-base-300">
-              search
-            </span>
+          <div class="h-full flex items-center">
+            <span class="material-icons text-3xl text-base-300"> search </span>
           </div>
         </div>
       </div>
-
     </div>
 
-
-
-
-    <div class="w-full bg-white drop-shadow-xl ">
+    <div class="w-full bg-white drop-shadow-xl">
       <table class="table w-full rounded-xl bg-white h-full" *ngIf="!isLoading">
         <thead>
           <tr>
@@ -39,19 +40,20 @@
               </span>
             </th>
             <th class="text-base">state</th>
-            <th class="text-base"> Location</th>
-            <th class="text-base"> Verified</th>
-
+            <th class="text-base">Location</th>
+            <th class="text-base">Verified</th>
           </tr>
         </thead>
         <tbody class="">
-          <tr *ngFor="let user of users; let i = index"
-            class="hover:text-slate-400 transition-all rounded-full cursor-pointer" [routerLink]="[i]">
-
-            <th class="flex justify-center ">
-              <div class="avatar ">
+          <tr
+            *ngFor="let user of users; let i = index"
+            class="hover:text-slate-400 transition-all rounded-full cursor-pointer"
+            [routerLink]="[i]"
+          >
+            <th class="flex justify-center">
+              <div class="avatar">
                 <div class="w-12 rounded-full">
-                  <img src="https://api.lorem.space/image/face?hash=64318">
+                  <img src="https://api.lorem.space/image/face?hash=64318" />
                 </div>
               </div>
             </th>
@@ -59,37 +61,34 @@
             <td>{{ user.job }}</td>
             <td>{{ user.color }}</td>
             <td>
-              <span class="material-icons" *ngIf="user.verified">
-                done
-              </span>
-              <span class="material-icons text-error-content" *ngIf="!user.verified">
+              <span class="material-icons" *ngIf="user.verified"> done </span>
+              <span
+                class="material-icons text-error-content"
+                *ngIf="!user.verified"
+              >
                 close
               </span>
             </td>
-
           </tr>
-
-
         </tbody>
-
-
       </table>
-      <div class="h-auto w-full flex justify-center items-end pb-10 bg-white mt-20" *ngIf="!isLoading">
+      <div
+        class="h-auto w-full flex justify-center items-end pb-10 bg-white mt-20"
+        *ngIf="!isLoading"
+      >
         <div class="btn-group">
           <button class="btn">1</button>
           <button class="btn btn-active">2</button>
           <button class="btn">3</button>
           <button class="btn">4</button>
         </div>
-
-
       </div>
     </div>
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
   </div>
 
-  <div class="card w-[800px] px-12 pb-8 flex justify-center items-start  ">
-    <div class=" w-full h-full">
+  <div class="card w-[800px] pl-12 pb-8 flex justify-center items-start">
+    <div class="w-full h-full">
       <router-outlet></router-outlet>
     </div>
   </div>
