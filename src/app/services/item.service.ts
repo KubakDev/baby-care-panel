@@ -22,6 +22,7 @@ export class ItemService {
     },
     { name: 'Marjy Ferencz', job: 'Office Assistant I', color: 'Crimson', verified: false },
     { name: 'Brice Swyre', job: 'Tax Accountant', color: 'Red', verified: true },
+
   ];
   constructor() { }
 }
