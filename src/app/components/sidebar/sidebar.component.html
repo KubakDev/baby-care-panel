@@ -1,62 +1,79 @@
-<ul class="menu bg-base-100 w-64 p-2 rounded-box">
+<ul class="menu bg-base-100 p-2 rounded-box">
   <li routerLink="/dashboard">
     <a
+      [@slideIn]="isOpen"
       class="strong"
       routerLinkActive=" bg-primary text-primary-content"
       [routerLinkActiveOptions]="{ exact: true }"
     >
       <span class="material-icons"> home </span>
-      Home
+      <div [@fadeOut]="isOpen">Home</div>
     </a>
   </li>
   <li>
-    <a class="strong">
+    <a [@slideIn]="isOpen" class="strong">
       <span class="material-icons"> notifications </span>
-      Inbox
+      <div [@fadeOut]="isOpen">Inbox</div>
     </a>
   </li>
   <li>
-    <a class="strong">
+    <a [@slideIn]="isOpen" class="strong">
       <span class="material-icons"> import_contacts </span>
-      Advice
+      <div [@fadeOut]="isOpen">Advice</div>
     </a>
   </li>
   <li>
-    <a class="strong">
+    <a [@slideIn]="isOpen" class="strong">
       <span class="material-icons"> poll </span>
-      Survey
+      <div [@fadeOut]="isOpen">Survey</div>
     </a>
   </li>
   <li>
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+    <a
+      [@slideIn]="isOpen"
+      class="strong"
+      routerLinkActive=" bg-primary text-primary-content"
+    >
       <span class="material-icons"> image </span>
-      Ads
+      <div [@fadeOut]="isOpen">Ads</div>
     </a>
   </li>
   <div class="divider"></div>
   <li routerLink="/dashboard/users">
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+    <a
+      [@slideIn]="isOpen"
+      class="strong"
+      routerLinkActive=" bg-primary text-primary-content"
+    >
       <span class="material-icons"> people </span>
-      Users
+      <div [@fadeOut]="isOpen">Users</div>
     </a>
   </li>
   <li>
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+    <a
+      [@slideIn]="isOpen"
+      class="strong"
+      routerLinkActive=" bg-primary text-primary-content"
+    >
       <span class="material-icons"> groups </span>
-      Admins
+      <div [@fadeOut]="isOpen">Admins</div>
     </a>
   </li>
   <div class="divider"></div>
   <li routerLink="/dashboard/settings">
-    <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+    <a
+      [@slideIn]="isOpen"
+      class="strong"
+      routerLinkActive=" bg-primary text-primary-content"
+    >
       <span class="material-icons"> settings </span>
-      Settings
+      <div [@fadeOut]="isOpen">Settings</div>
     </a>
   </li>
   <li (click)="onLogout()" class="text-error-content">
-    <a class="strong bg-error">
+    <a [@slideIn]="isOpen" class="strong bg-error">
       <span class="material-icons"> logout </span>
-      Log Out
+      <div [@fadeOut]="isOpen">Logout</div>
     </a>
   </li>
 </ul>
