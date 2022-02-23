@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,7 +8,8 @@ import { ItemService } from 'src/app/services/item.service';
 @Component({
   selector: 'app-userform',
   templateUrl: './userform.component.html',
-  styleUrls: ['./userform.component.scss']
+  styleUrls: ['./userform.component.scss'],
+
 })
 export class UserformComponent implements OnInit {
 
@@ -48,6 +50,7 @@ export class UserformComponent implements OnInit {
 
 
   cancleUser() {
+
     this.router.navigate(['/dashboard/users']);
   }
   onSubmitEdit() {
@@ -71,6 +74,7 @@ export class UserformComponent implements OnInit {
 
   }
   changeEditMode(condition: boolean) {
+
     if (condition)
       this.editMode = true;
     else
