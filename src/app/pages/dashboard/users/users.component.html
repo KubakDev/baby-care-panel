@@ -1,21 +1,23 @@
-<div class="flex w-full h-auto">
+<div class="flex w-full h-auto ">
   <div class="h-full w-full flex items-center flex-col justify-start">
-    <div class="w-full flex justify-end gap-4 mb-10">
-      <div class="form-control w-full">
-        <div class="relative flex w-full pr-16 input h-16 rounded-2xl drop-shadow-xl text-lg">
-          <input type="text" id="" placeholder="#1246788" class="w-full border-none" #input [(ngModel)]="searchText"
-            (keyup)="onType($event)" />
 
-          <div class="h-full flex items-center">
-            <span class="material-icons text-3xl text-base-300" *ngIf="!searchText">
-              search
-            </span>
-            <button class="material-icons text-4xl text-base-300" *ngIf="searchText" (click)="onClear()">
-              clear
-            </button>
-          </div>
-        </div>
+
+    <div class="relative flex justify-between items-center w-full input h-16 rounded-2xl drop-shadow-xl text-lg mb-10">
+      <div class="w-full ">
+
+        <input type="text" id="" placeholder="#1246788" class="w-full border-none" #input [(ngModel)]="searchText"
+          (keyup)="onType($event)" />
       </div>
+
+      <div class="h-full  w-20 flex items-center justify-end">
+        <span class="material-icons text-4xl text-base-300" *ngIf="!searchText">
+          search
+        </span>
+        <button class="material-icons text-4xl text-base-300" *ngIf="searchText" (click)="onClear()">
+          clear
+        </button>
+      </div>
+
     </div>
 
     <div class="table w-full bg-white drop-shadow-xl ">
