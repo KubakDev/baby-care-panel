@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
@@ -36,7 +37,7 @@ export class UserformComponent implements OnInit {
     })
 
   })
-  constructor(private route: ActivatedRoute, private item: ItemService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(() => {
@@ -62,6 +63,10 @@ export class UserformComponent implements OnInit {
   confirmUpdate(result: boolean) {
     if (!result) {
       this.confirmModal = false;
+    }
+    else {
+      this.toaster.success("user is updated succesfully", "update user")
+
     }
 
   }

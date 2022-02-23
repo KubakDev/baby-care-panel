@@ -15,5 +15,8 @@ export class ConfirmModalComponent implements OnInit {
     if (!result) {
       this.result.emit(false)
     }
+    else {
+      this.result.emit(true)
+    }
   }
 }
