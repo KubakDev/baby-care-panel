@@ -1,3 +1,29 @@
 li {
   margin: 2px 0;
 }
+
+.small-li {
+  transform: scaleX(0) !important;
+  transition: all 1s ease;
+  transform: translateX(-500px) !important;
+
+  // transition: display 2s ease;
+  // display: none !important;
+}
+
+.large-li {
+  transform: scaleX(1) !important;
+  // display: block !important;
+  transition: all 1s ease;
+  // transition: display 2s ease;
+}
+
+.animation {
+  transform: scaleX(0);
+  // display: none;
+  overflow: hidden;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}

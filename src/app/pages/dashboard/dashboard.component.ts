@@ -11,6 +11,7 @@ import { AuthService } from '../auth/services/auth.service';
 export class DashboardComponent implements OnInit {
   //#region Fields
 
+  event!: Event;
   sort: 'asc' | 'desc' | 'none' = 'none';
   searchText?: string;
   isLoading: boolean = false;
@@ -65,6 +66,10 @@ export class DashboardComponent implements OnInit {
       ];
       this.isLoading = false;
     }, 700);
+  }
+
+  onChange(event: Event) {
+    this.event = event;
   }
 
   onName(): void {
