@@ -50,8 +50,18 @@ export class UserformComponent implements OnInit {
 
 
   cancleUser() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
 
-    this.router.navigate(['/dashboard/users']);
+      document.getElementById("trans")!.style.animation = "fadeOut 0.5s";
+      setTimeout(() => {
+
+        this.router.navigate(['/dashboard/users']);
+      }, 400);
+    } else {
+
+      this.router.navigate(['/dashboard/users']);
+    }
+
   }
   onSubmitEdit() {
     this.submited = true
@@ -68,7 +78,8 @@ export class UserformComponent implements OnInit {
       this.confirmModal = false;
     }
     else {
-      this.toaster.success("user is updated succesfully", "update user")
+      this.toaster.toastrConfig.toastClass = "px-8 py-10 text-white bg-red-300 rounded-xl"
+      this.toaster.show("user is updated succesfully", "update user")
 
     }
 

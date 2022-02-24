@@ -1,15 +1,16 @@
 input[type="text"], textarea, select { 
   outline: none;
 }
-.card{
-  height: calc(100vh - 131px);
-}
+
 .table{
-  border-radius: 40px;
+  border-radius: 16px;
+}
+.card{
+  height: 900px;
 }
 table {
   border-collapse: collapse;
-  border-radius: 1em;
+  border-radius: 16px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -17,7 +18,11 @@ table {
     height: 0px;
   }
 }
-
+@media (min-width: 1280px) {
+  .card{
+    height: calc(100vh - 131px);
+  }
+}
 
 
 
