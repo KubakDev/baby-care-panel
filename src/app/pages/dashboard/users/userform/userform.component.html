@@ -5,7 +5,7 @@
   <div *ngIf="user"
     class=" rounded-3xl bg-white h-3/4 md:h-full md:w-full w-3/4 flex flex-col  gap-5 overflow-y-scroll shadow-xl"
     (click)="$event.stopPropagation();" id="trans">
-    <div class=" h-full w-full " *ngIf=" confirmModal" (click)="confirmUpdate(false)">
+    <div class=" h-full w-full " *ngIf="confirmModal" (click)="confirmUpdate(false)">
 
       <app-confirm-modal (result)="confirmUpdate($event)"></app-confirm-modal>
     </div>
