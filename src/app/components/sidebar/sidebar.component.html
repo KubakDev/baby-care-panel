@@ -1,11 +1,7 @@
 <ul class="menu bg-base-100 p-2 rounded-box">
   <li routerLink="/dashboard">
-    <a
-      [@slideIn]="isOpen"
-      class="strong"
-      routerLinkActive=" bg-primary text-primary-content"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
+    <a [@slideIn]="isOpen" class="strong" routerLinkActive=" bg-primary text-primary-content"
+      [routerLinkActiveOptions]="{ exact: true }">
       <span class="material-icons"> home </span>
       <div [@fadeOut]="isOpen">Home</div>
     </a>
@@ -29,43 +25,27 @@
     </a>
   </li>
   <li>
-    <a
-      [@slideIn]="isOpen"
-      class="strong"
-      routerLinkActive=" bg-primary text-primary-content"
-    >
+    <a [@slideIn]="isOpen" class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> image </span>
       <div [@fadeOut]="isOpen">Ads</div>
     </a>
   </li>
   <div class="divider"></div>
   <li routerLink="/dashboard/users">
-    <a
-      [@slideIn]="isOpen"
-      class="strong"
-      routerLinkActive=" bg-primary text-primary-content"
-    >
+    <a [@slideIn]="isOpen" class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> people </span>
       <div [@fadeOut]="isOpen">Users</div>
     </a>
   </li>
   <li>
-    <a
-      [@slideIn]="isOpen"
-      class="strong"
-      routerLinkActive=" bg-primary text-primary-content"
-    >
+    <a [@slideIn]="isOpen" class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> groups </span>
       <div [@fadeOut]="isOpen">Admins</div>
     </a>
   </li>
   <div class="divider"></div>
   <li routerLink="/dashboard/settings">
-    <a
-      [@slideIn]="isOpen"
-      class="strong"
-      routerLinkActive=" bg-primary text-primary-content"
-    >
+    <a [@slideIn]="isOpen" class="strong" routerLinkActive=" bg-primary text-primary-content">
       <span class="material-icons"> settings </span>
       <div [@fadeOut]="isOpen">Settings</div>
     </a>

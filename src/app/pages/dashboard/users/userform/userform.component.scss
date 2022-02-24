@@ -18,3 +18,20 @@
   background:#5c2ec0;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  
+  ::ng-deep {
+    #trans  {
+      animation: fadeIn 0.5s;
+  
+    }
+    @keyframes fadeIn {
+      0% {height: 50%;width: 50%;opacity: 0%;}
+      75% {height: 75%;width: 75%;opacity: 100%;}
+    }
+  
+   
+   
+  }
+}

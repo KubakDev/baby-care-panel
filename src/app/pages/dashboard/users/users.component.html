@@ -1,4 +1,4 @@
-<div class="flex w-full h-auto ">
+<div class="flex w-full h-auto flex-wrap xl:flex-nowrap ">
   <div class="h-full w-full flex items-center flex-col justify-start">
 
 
@@ -76,8 +76,8 @@
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
   </div>
 
-  <div class="card w-[800px] pl-12 pb-8 flex justify-center items-start">
-    <div class="w-full h-full">
+  <div class="card  w-full mt-20 xl:mt-0 xl:w-1/2 xl:pl-12 pb-8 flex ">
+    <div class="w-full h-full  ">
       <router-outlet></router-outlet>
     </div>
   </div>
