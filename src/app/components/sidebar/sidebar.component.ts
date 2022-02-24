@@ -9,7 +9,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/pages/auth/services/auth.service';
 
@@ -45,6 +45,15 @@ export class SidebarComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  @HostListener('window:resize', ['$event'])
+  sizeChange(event: any) {
+    if (event.target.innerWidth < 1024) {
+      this.isOpen = false;
+    } else if (event.target.innerWidth > 1024) {
+      this.isOpen = true;
+    }
+  }
 
   toggle() {
     this.isOpen = !this.isOpen;

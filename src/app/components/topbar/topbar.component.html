@@ -1,9 +1,83 @@
-<div class="flex gap-5">
-  <button (click)="onClick($event)" class="btn btn-primary h-[67px] w-[72px]">
+<div class="flex gap-3 md:gap-8">
+  <div class="dropdown md:hidden">
+    <button tabindex="0" class="btn btn-ghost h-[67px] w-[72px] md:hidden">
+      <span class="material-icons"> menu </span>
+    </button>
+    <ul
+      tabindex="0"
+      class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
+    >
+      <li routerLink="/dashboard">
+        <a
+          class="strong"
+          routerLinkActive=" bg-primary text-primary-content"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="material-icons"> home </span>
+          <div>Home</div>
+        </a>
+      </li>
+      <li>
+        <a class="strong">
+          <span class="material-icons"> notifications </span>
+          <div>Inbox</div>
+        </a>
+      </li>
+      <li>
+        <a class="strong">
+          <span class="material-icons"> import_contacts </span>
+          <div>Advice</div>
+        </a>
+      </li>
+      <li>
+        <a class="strong">
+          <span class="material-icons"> poll </span>
+          <div>Survey</div>
+        </a>
+      </li>
+      <li>
+        <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+          <span class="material-icons"> image </span>
+          <div>Ads</div>
+        </a>
+      </li>
+      <div class="divider"></div>
+      <li routerLink="/dashboard/users">
+        <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+          <span class="material-icons"> people </span>
+          <div>Users</div>
+        </a>
+      </li>
+      <li>
+        <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+          <span class="material-icons"> groups </span>
+          <div>Admins</div>
+        </a>
+      </li>
+      <div class="divider"></div>
+      <li routerLink="/dashboard/settings">
+        <a class="strong" routerLinkActive=" bg-primary text-primary-content">
+          <span class="material-icons"> settings </span>
+          <div>Settings</div>
+        </a>
+      </li>
+      <li (click)="onLogout()" class="text-error-content">
+        <a class="strong bg-error">
+          <span class="material-icons"> logout </span>
+          <div>Logout</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <button
+    (click)="onClick($event)"
+    class="btn btn-primary h-[67px] w-[72px] hidden md:block"
+  >
     <span class="material-icons"> menu </span>
   </button>
   <div
-    class="navbar w-full bg-neutral-content text-neutral shadow-xl rounded-xl px-4"
+    class="navbar w-full lg:bg-neutral-content text-neutral lg:shadow-xl rounded-xl px-4"
   >
     <div class="flex-1">
       <app-breadcrumb></app-breadcrumb>

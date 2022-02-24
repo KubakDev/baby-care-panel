@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/pages/auth/services/auth.service';
 
 @Component({
   selector: 'app-topbar',
@@ -12,7 +14,12 @@ export class TopbarComponent implements OnInit {
     this.eventChange.emit(event);
   }
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  onLogout() {
+    this.auth.logout();
+    if (!this.auth.isAuthenticated) this.router.navigateByUrl('');
+  }
 }

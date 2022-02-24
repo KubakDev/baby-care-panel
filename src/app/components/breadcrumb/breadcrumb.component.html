@@ -1,7 +1,17 @@
-<div class="text-sm breadcrumbs">
+<div class="text-sm breadcrumbs hidden md:block">
   <ul>
-    <li *ngFor="let breadcrumb of breadcrumbs$ | async">
+    <li *ngFor="let breadcrumb of breadcrumbs$ | async; let index = index">
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="md:hidden" *ngIf="breadcrumbs$ | async as breadcrumbs">
+  <ul>
+    <li>
+      <a [routerLink]="breadcrumbs[breadcrumbs.length - 1].url">{{
+        breadcrumbs[breadcrumbs.length - 1].label
+      }}</a>
     </li>
   </ul>
 </div>
