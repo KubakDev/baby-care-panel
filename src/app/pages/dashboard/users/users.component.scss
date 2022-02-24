@@ -12,7 +12,11 @@ table {
   border-radius: 1em;
   overflow: hidden;
 }
-
+@media (max-width: 768px) {
+  .card{
+    height: 0px;
+  }
+}
 
 
 
