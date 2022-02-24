@@ -1,10 +1,10 @@
 <div class="flex flex-col justify-start items-center w-full bg-slate-200 min-h-screen">
-  <div class="p-8 w-full ">
-    <app-topbar></app-topbar>
+  <div class="p-8 w-full">
+    <app-topbar (eventChange)="onChange($event)"></app-topbar>
   </div>
   <div class="flex justify-start items-start w-full h-full">
-    <div class="w-96 h-full flex justify-center items-start px-12 mt-20">
-      <app-sidebar class="w-full"></app-sidebar>
+    <div class="h-full flex justify-start items-start pl-8 mt-20">
+      <app-sidebar [event]="event"></app-sidebar>
     </div>
 
     <div class="px-8 w-full ">

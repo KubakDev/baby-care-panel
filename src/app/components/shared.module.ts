@@ -13,7 +13,7 @@ const components = [
   TopbarComponent,
   BreadcrumbComponent,
   ErrorComponent,
-  ConfirmModalComponent
+  ConfirmModalComponent,
 ];
 
 @NgModule({
@@ -22,4 +22,4 @@ const components = [
   exports: [...components],
   providers: [],
 })
-export class SharedModule { }
+export class SharedModule {}
