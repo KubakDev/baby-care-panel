@@ -1,6 +1,9 @@
-<div class="flex gap-3 md:gap-8">
+<div class="flex md:gap-8">
   <div class="dropdown md:hidden">
-    <button tabindex="0" class="btn btn-ghost h-[67px] w-[72px] md:hidden">
+    <button
+      tabindex="0"
+      class="btn btn-ghost h-[67px] w-[50px] md:w-[72px] md:hidden"
+    >
       <span class="material-icons"> menu </span>
     </button>
     <ul
@@ -74,7 +77,9 @@
     (click)="onClick($event)"
     class="btn btn-primary h-[67px] w-[72px] hidden md:block"
   >
-    <span class="material-icons"> menu </span>
+    <span class="material-icons"> menu </span></button
+  ><button class="btn btn-secondary h-[67px]" (click)="onSuccess()">
+    Open Toast
   </button>
   <div
     class="navbar w-full lg:bg-neutral-content text-neutral lg:shadow-xl rounded-xl px-4"
